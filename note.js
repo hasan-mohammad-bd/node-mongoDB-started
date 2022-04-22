@@ -53,7 +53,41 @@ e. app.listen(port, () =>{
 
 20. you can change the project name to anything from "test", what kind of data you would like to store is called "collection(array), you can change it as well to anything."
 
-20. you can change the 
+21. go to Node mongoDB crude
+
+22. go to "Usage Example" > "inset a Document" > copy the code from async function and replace with previously copied mongoDB code's function.
+
+23. the function example:
+async function run(){
+    try{
+        await client.connect();
+        const userCollection = client.db("foodExpress").collection("user");
+        const user = {name: "Hasan", email:"hasan@gmail.com"}
+        const result = await userCollection.insertOne(user)
+        console.log(`User inserted with id: ${result.insertedId}`);
+
+
+    }
+    finally{
+        await client.close();
+    }
+
+}
+run().catch(console.dir)
+
+24. use middleware in index.js
+
+
+app.use(cors());
+app.use(express.json());
+
+
+
+1. client side: create form
+2. on submit : get form data and create user object.
+3. on server: create user POST method to receive data on the backend.
+4. on Client side: set fetch with POST, headers,body
+5. make sure you return a json from the post api.
 =====================
 
 what is the difference between mongoDB vs mySQL.
