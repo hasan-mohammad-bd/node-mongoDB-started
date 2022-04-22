@@ -88,6 +88,17 @@ app.use(express.json());
 3. on server: create user POST method to receive data on the backend.
 4. on Client side: set fetch with POST, headers,body
 5. make sure you return a json from the post api.
+
+LOAD Data to the client side
+ * -------------------------------
+ * 1. create get API on the server
+ * 2. create a query object
+ * 3. collection.find (query)
+ * 4. cursor.toArray()
+ * 5. return the result
+ * 6. from client useEffect and display like you have done before
+ * ---------------------------
+
 =====================
 
 what is the difference between mongoDB vs mySQL.
